@@ -2,14 +2,12 @@
 
 namespace LaravelFlare\Cms;
 
-use Illuminate\Support\ServiceProvider;
-
 class CmsModuleProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
      */
-    public function boot(\Illuminate\Routing\Router $router)
+    public function boot()
     {
         $this->registerBladeOperators();
     }
