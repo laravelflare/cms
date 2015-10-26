@@ -6,5 +6,4 @@ use Illuminate\Routing\Router;
 
 class SluggableRouter extends Router
 {
-
 }

@@ -2,7 +2,6 @@
 
 namespace LaravelFlare\Cms\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
 use LaravelFlare\Flare\Admin\AdminManager;
 use Illuminate\Foundation\Bus\DispatchesJobs;
