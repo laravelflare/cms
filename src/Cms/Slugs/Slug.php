@@ -39,14 +39,14 @@ class Slug extends Model
      *
      * @var array
      */
-    protected $fillable = ['slug'];
+    protected $fillable = ['path'];
 
     /**
-     * Get all of the owning sluggable models.
+     * Get the owning model.
      *
      * @return
      */
-    public function sluggable()
+    public function model()
     {
         return $this->morphTo();
     }
@@ -58,6 +58,6 @@ class Slug extends Model
      */
     public function __toString()
     {
-        return $this->slug;
+        return $this->path;
     }
 }
