@@ -3,23 +3,23 @@
 namespace LaravelFlare\Cms\Http\Middleware;
 
 use Closure;
-use LaravelFlare\Cms\Slugs\SlugRepository;
+use LaravelFlare\Cms\Content\ContentManager;
 
 class CheckSlugExists
 {
     /**
      * Slugs Repostory
      *
-     * @var \LaravelFlare\Cms\Slugs\SlugRepository
+     * @var \LaravelFlare\Cms\Content\ContentManager
      */
-    protected $slugs;
+    protected $content;
 
     /**
      * Create a new filter instance.
      */
-    public function __construct(SlugRepository $slugRepository)
+    public function __construct(ContentManager $contentManager)
     {
-        $this->slugs = $slugRepository;
+        $this->content = $contentManager;
     }
 
     /**
@@ -32,7 +32,7 @@ class CheckSlugExists
      */
     public function handle($request, Closure $next)
     {
-        if (!$this->slugs->findBySlug($request->path)) {
+        if (!$this->content->findBySlug($request->path)) {
             return view('flare::cms.404', []);
         }
 
