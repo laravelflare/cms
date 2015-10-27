@@ -2,6 +2,8 @@
 
 namespace LaravelFlare\Cms;
 
+use Illuminate\Support\ServiceProvider;
+
 class CmsModuleProvider extends ServiceProvider
 {
     /**
