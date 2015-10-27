@@ -2,6 +2,7 @@
 
 namespace LaravelFlare\Cms;
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
 class CmsModuleProvider extends ServiceProvider
@@ -9,8 +10,10 @@ class CmsModuleProvider extends ServiceProvider
     /**
      * Perform post-registration booting of services.
      */
-    public function boot()
+    public function boot(Router $router)
     {
+        $router->middleware('checkslugexists', 'LaravelFlare\Cms\Http\Middleware\CheckModelExists');
+
         $this->registerBladeOperators();
     }
 
