@@ -2,6 +2,8 @@
 
 namespace LaravelFlare\Cms\Content;
 
+use LaravelFlare\Cms\Slugs\Slug;
+
 class ContentManager
 {
     
@@ -17,7 +19,11 @@ class ContentManager
 
     public function findBySlug($slug)
     {
+        if ($slug = Slug::wherePath($slug)->first()) {
+            return $slug->model;
+        }
 
+        return;
     }
 
 }

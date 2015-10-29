@@ -38,8 +38,7 @@ class CmsController extends FlareController
      */
     public function homepage()
     {
-        die('homepage');
-        return view('', []);
+        return view('flare::cms.index', []);
     }
 
     /**
@@ -51,8 +50,7 @@ class CmsController extends FlareController
      */
     public function route($slug)
     {
-        echo $slug; die('got here');
-        return view('', []);
+        return view('flare::cms.default', ['model' => \App::make('modelFromSlug')]);
     }
 
     /**

@@ -32,9 +32,11 @@ class CheckSlugExists
      */
     public function handle($request, Closure $next)
     {
-        if (!$this->content->findBySlug($request->path)) {
+        if (!$model = $this->content->findBySlug($request->path())) {
             return view('flare::cms.404', []);
         }
+
+        app()->instance('modelFromSlug', $model);
 
         return $next($request);
     }
