@@ -5,11 +5,10 @@ namespace LaravelFlare\Cms\Http\Controllers;
 use Illuminate\Contracts\Auth\Guard;
 use LaravelFlare\Flare\Admin\AdminManager;
 use Illuminate\Foundation\Bus\DispatchesJobs;
+use LaravelFlare\Flare\Http\Controllers\FlareController;
 
 class CmsController extends FlareController
 {
-    use AuthenticatesAndResetsPasswords, DispatchesJobs;
-
     /**
      * Auth.
      * 
@@ -39,6 +38,7 @@ class CmsController extends FlareController
      */
     public function homepage()
     {
+        die('homepage');
         return view('', []);
     }
 
@@ -51,6 +51,7 @@ class CmsController extends FlareController
      */
     public function route($slug)
     {
+        echo $slug; die('got here');
         return view('', []);
     }
 
