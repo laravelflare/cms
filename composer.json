@@ -37,5 +37,5 @@
     },
     "suggest": {
         "laravelflare/pages": "Provides a Pages module for the Flare CMS",
-    },
+    }
 }
