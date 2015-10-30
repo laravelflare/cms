@@ -22,7 +22,7 @@ class CmsServiceProvider extends ServiceProvider
         if (!$this->app->routesAreCached()) {
             require __DIR__.'/Http/routes.php';
         }
-        
+
         // Views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'flare');
         $this->publishes([
