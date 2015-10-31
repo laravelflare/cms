@@ -39,7 +39,7 @@ class Slug extends Model
      *
      * @var array
      */
-    protected $fillable = ['path'];
+    protected $fillable = ['path'];//, 'model_id', 'model_type'];
 
     /**
      * Get the owning model.
