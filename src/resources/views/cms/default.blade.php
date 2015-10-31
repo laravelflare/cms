@@ -1,1 +1,0 @@
-Default: {{ var_dump($model) }}

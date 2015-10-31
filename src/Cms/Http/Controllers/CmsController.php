@@ -26,7 +26,7 @@ class CmsController extends FlareController
     {
         parent::__construct($adminManager);
 
-        $this->middleware('checkslugexists', ['only' => ['route']]);
+        $this->middleware('checkslugexists', ['only' => ['homepage', 'route']]);
 
         $this->auth = $auth;
     }
@@ -38,19 +38,17 @@ class CmsController extends FlareController
      */
     public function homepage()
     {
-        return view('flare::cms.index', []);
+        return view('flare::cms.index', ['model' => \App::make('modelFromSlug')]);
     }
 
     /**
      * Homepage View
-     *
-     * @param string $slug
      * 
      * @return \Illuminate\View\View
      */
-    public function route($slug)
+    public function route()
     {
-        return view('flare::cms.default', ['model' => \App::make('modelFromSlug')]);
+        return view('flare::cms.index', ['model' => \App::make('modelFromSlug')]);
     }
 
     /**

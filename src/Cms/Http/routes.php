@@ -11,5 +11,5 @@
 |
 */
 
-Route::any('{slug}', '\LaravelFlare\Cms\Http\Controllers\CmsController@route');
+Route::any('{slug}/{two?}/{three?}/{four?}/{five?}', '\LaravelFlare\Cms\Http\Controllers\CmsController@route');
 Route::any('/', '\LaravelFlare\Cms\Http\Controllers\CmsController@homepage');
