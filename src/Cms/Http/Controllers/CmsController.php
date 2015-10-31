@@ -38,7 +38,9 @@ class CmsController extends FlareController
      */
     public function homepage()
     {
-        return view('flare::cms.index', ['model' => \App::make('modelFromSlug')]);
+        $model = \App::make('modelFromSlug');
+        
+        return view($model->view(), ['model' => $model]);
     }
 
     /**
@@ -48,7 +50,9 @@ class CmsController extends FlareController
      */
     public function route()
     {
-        return view('flare::cms.index', ['model' => \App::make('modelFromSlug')]);
+        $model = \App::make('modelFromSlug');
+
+        return view($model->view(), ['model' => $model]);
     }
 
     /**
