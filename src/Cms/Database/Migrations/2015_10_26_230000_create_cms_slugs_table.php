@@ -12,7 +12,8 @@ class CreateCmsSlugsTable extends Migration
     {
         Schema::create('cms_slugs', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->string('path');
+            $table->increments('id');
+            $table->string('path')->unique();
             $table->morphs('model');
         });
     }
