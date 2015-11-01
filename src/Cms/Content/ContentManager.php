@@ -6,15 +6,12 @@ use LaravelFlare\Cms\Slugs\Slug;
 
 class ContentManager
 {
-    
     public function __construct()
     {
-
     }
 
     public function find($model, $primaryKey)
     {
-
     }
 
     public function findBySlug($slug)
@@ -25,5 +22,4 @@ class ContentManager
 
         return;
     }
-
 }

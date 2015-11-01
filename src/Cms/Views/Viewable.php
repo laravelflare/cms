@@ -5,7 +5,7 @@ namespace LaravelFlare\Cms\Views;
 interface Viewable
 {
     /**
-     * Model View
+     * Model View.
      * 
      * @return string
      */

@@ -8,7 +8,7 @@ use LaravelFlare\Cms\Content\ContentManager;
 class CheckSlugExists
 {
     /**
-     * Slugs Repostory
+     * Slugs Repostory.
      *
      * @var \LaravelFlare\Cms\Content\ContentManager
      */

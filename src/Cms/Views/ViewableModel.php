@@ -1,11 +1,12 @@
-<?php 
+<?php
+
 
 namespace LaravelFlare\Cms\Views;
 
 trait ViewableModel
 {
     /**
-     * Model View
+     * Model View.
      * 
      * @return string
      */

@@ -4,7 +4,6 @@ namespace LaravelFlare\Cms\Http\Controllers;
 
 use Illuminate\Contracts\Auth\Guard;
 use LaravelFlare\Flare\Admin\AdminManager;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use LaravelFlare\Flare\Http\Controllers\FlareController;
 
 class CmsController extends FlareController
@@ -32,19 +31,19 @@ class CmsController extends FlareController
     }
 
     /**
-     * Homepage View
+     * Homepage View.
      * 
      * @return \Illuminate\View\View
      */
     public function homepage()
     {
         $model = \App::make('modelFromSlug');
-        
+
         return view($model->view(), ['model' => $model]);
     }
 
     /**
-     * Homepage View
+     * Homepage View.
      * 
      * @return \Illuminate\View\View
      */
@@ -67,6 +66,4 @@ class CmsController extends FlareController
     {
         return view('flare::cms.404', []);
     }
-
-
 }

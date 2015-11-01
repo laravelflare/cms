@@ -2,12 +2,10 @@
 
 namespace LaravelFlare\Cms\Slugs;
 
-use LaravelFlare\Cms\Slugs\Slug;
-
 trait SluggableModel
 {
     /**
-     * Morph Slug to Model
+     * Morph Slug to Model.
      * 
      * @return 
      */
@@ -17,7 +15,7 @@ trait SluggableModel
     }
 
     /**
-     * Saves the Slug to the Model
+     * Saves the Slug to the Model.
      *  
      * @return 
      */
@@ -33,6 +31,7 @@ trait SluggableModel
 
         if ($this->slug) {
             $this->slug()->update(['path' => $slugValue]);
+
             return;
         }
 
