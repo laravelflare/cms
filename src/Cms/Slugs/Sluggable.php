@@ -1,6 +1,5 @@
 <?php
 
-
 namespace LaravelFlare\Cms\Slugs;
 
 interface Sluggable
