@@ -10,7 +10,7 @@ class CreateCmsOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cms_options', function (Blueprint $table) {
+        Schema::create('flare_cms_options', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name')->unique();
@@ -23,6 +23,6 @@ class CreateCmsOptionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cms_options');
+        Schema::drop('flare_cms_options');
     }
 }

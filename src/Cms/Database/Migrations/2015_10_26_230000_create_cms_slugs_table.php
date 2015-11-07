@@ -10,7 +10,7 @@ class CreateCmsSlugsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cms_slugs', function (Blueprint $table) {
+        Schema::create('flare_cms_slugs', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('path')->unique();
@@ -23,6 +23,6 @@ class CreateCmsSlugsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cms_slugs');
+        Schema::drop('flare_cms_slugs');
     }
 }
