@@ -28,8 +28,6 @@ class CmsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/flare'),
         ]);
-
-        $this->registerBladeOperators();
     }
 
     /**
@@ -37,7 +35,6 @@ class CmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerServiceProviders();
     }
 
     /**
