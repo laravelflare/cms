@@ -11,7 +11,7 @@ class Option extends Model
      *
      * @var string
      */
-    protected $table = 'options';
+    protected $table = 'flare_cms_options';
 
     /**
      * Indicates if the IDs are auto-incrementing.

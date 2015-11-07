@@ -11,7 +11,7 @@ class Slug extends Model
      *
      * @var string
      */
-    protected $table = 'cms_slugs';
+    protected $table = 'flare_cms_slugs';
 
     /**
      * The primary key for the model.
