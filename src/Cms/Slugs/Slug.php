@@ -2,6 +2,7 @@
 
 namespace LaravelFlare\Cms\Slugs;
 
+use \Request;
 use Illuminate\Database\Eloquent\Model;
 
 class Slug extends Model
@@ -39,7 +40,7 @@ class Slug extends Model
      *
      * @var array
      */
-    protected $fillable = ['path'];//, 'model_id', 'model_type'];
+    protected $fillable = ['path'];
 
     /**
      * Get the owning model.
@@ -49,6 +50,21 @@ class Slug extends Model
     public function model()
     {
         return $this->morphTo();
+    }
+
+    /**
+     * Determines if the current Request Path
+     * matches this Sluggable Models path (slug).
+     *
+     * @return boolean
+     */
+    public function isActiveUrl()
+    {
+        if ($this->path == Request::path()) {
+            return true;
+        }
+
+        return false;
     }
 
     /**

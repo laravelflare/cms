@@ -51,8 +51,9 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Flare CMS</div>
-
+                <div class="title">
+                    Flare CMS
+                </div>
                 <div class="dump">
                     {{ dump($model) }}
                 </div>
