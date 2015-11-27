@@ -19,22 +19,23 @@ trait SluggableModel
      *  
      * @return 
      */
-    public function saveSlug($slugValue = null)
+    public function saveSlug($slugValue = null, $homepage = false)
     {
-        if (!$slugValue) {
-            $slugValue = str_slug($this->name);
-        }
+        if (!$homepage) {
+            if (!$slugValue) {
+                $slugValue = str_slug($this->name);
+            }
 
-        if (!$slugValue) {
-            return;
+            if (!$slugValue) {
+                return;
+            }
         }
 
         if ($this->slug) {
-            $this->slug()->update(['path' => $slugValue]);
-
+            $this->slug()->update(['path' => $homepage ? '' : $slugValue]);
             return;
         }
 
-        $this->slug()->create(['path' => $slugValue]);
+        $this->slug()->create(['path' => $homepage ? '' : $slugValue]);
     }
 }

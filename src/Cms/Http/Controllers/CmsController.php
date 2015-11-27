@@ -43,7 +43,7 @@ class CmsController extends FlareController
     }
 
     /**
-     * Homepage View.
+     * Route Slugs to Views.
      * 
      * @return \Illuminate\View\View
      */
