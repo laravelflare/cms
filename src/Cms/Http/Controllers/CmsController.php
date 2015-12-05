@@ -4,30 +4,16 @@ namespace LaravelFlare\Cms\Http\Controllers;
 
 use Illuminate\Contracts\Auth\Guard;
 use LaravelFlare\Flare\Admin\AdminManager;
-use LaravelFlare\Flare\Http\Controllers\FlareController;
+use Illuminate\Routing\Controller as BaseController;
 
-class CmsController extends FlareController
+class CmsController extends BaseController
 {
     /**
-     * Auth.
-     * 
-     * @var Guard
-     */
-    protected $auth;
-
-    /**
      * __construct.
-     * 
-     * @param Guard        $auth
-     * @param AdminManager $adminManager
      */
-    public function __construct(Guard $auth, AdminManager $adminManager)
+    public function __construct()
     {
-        parent::__construct($adminManager);
-
         $this->middleware('checkslugexists', ['only' => ['homepage', 'route']]);
-
-        $this->auth = $auth;
     }
 
     /**
