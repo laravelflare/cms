@@ -38,4 +38,16 @@ trait SluggableModel
 
         $this->slug()->create(['path' => $homepage ? '' : $slugValue]);
     }
+    
+    /**
+     * Provides the Link Accessor.
+     * 
+     * @return string
+     */
+    public function getLinkAttribute()
+    {
+        if ($this->slug) {
+            return url($this->slug);
+        }
+    }
 }
