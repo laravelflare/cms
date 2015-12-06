@@ -25,7 +25,7 @@ class CmsController extends BaseController
     {
         $model = \App::make('modelFromSlug');
 
-        return view($model->view(), ['model' => $model, ucfirst(class_basename($model)) => $model]);
+        return view($model->view(), ['model' => $model, lcfirst(class_basename($model)) => $model]);
     }
 
     /**
@@ -36,8 +36,8 @@ class CmsController extends BaseController
     public function route()
     {
         $model = \App::make('modelFromSlug');
-
-        return view($model->view(), ['model' => $model, ucfirst(class_basename($model)) => $model]);
+        
+        return view($model->view(), ['model' => $model, lcfirst(class_basename($model)) => $model]);
     }
 
     /**
