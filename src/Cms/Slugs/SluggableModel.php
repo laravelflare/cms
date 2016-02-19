@@ -33,12 +33,13 @@ trait SluggableModel
 
         if ($this->slug) {
             $this->slug()->update(['path' => $homepage ? '' : $slugValue]);
+
             return;
         }
 
         $this->slug()->create(['path' => $homepage ? '' : $slugValue]);
     }
-    
+
     /**
      * Provides the Link Accessor.
      * 
