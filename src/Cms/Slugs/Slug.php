@@ -2,7 +2,7 @@
 
 namespace LaravelFlare\Cms\Slugs;
 
-use \Request;
+use Request;
 use Illuminate\Database\Eloquent\Model;
 
 class Slug extends Model
@@ -56,7 +56,7 @@ class Slug extends Model
      * Determines if the current Request Path
      * matches this Sluggable Models path (slug).
      *
-     * @return boolean
+     * @return bool
      */
     public function isActiveUrl()
     {

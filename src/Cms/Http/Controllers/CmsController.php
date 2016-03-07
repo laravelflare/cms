@@ -2,8 +2,6 @@
 
 namespace LaravelFlare\Cms\Http\Controllers;
 
-use Illuminate\Contracts\Auth\Guard;
-use LaravelFlare\Flare\Admin\AdminManager;
 use Illuminate\Routing\Controller as BaseController;
 
 class CmsController extends BaseController
@@ -36,7 +34,7 @@ class CmsController extends BaseController
     public function route()
     {
         $model = \App::make('modelFromSlug');
-        
+
         return view($model->view(), ['model' => $model, lcfirst(class_basename($model)) => $model]);
     }
 
