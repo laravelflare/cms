@@ -18,11 +18,6 @@ class CmsServiceProvider extends ServiceProvider
             __DIR__.'/Database/Migrations' => base_path('database/migrations'),
         ]);
 
-        // Routes
-        if (!$this->app->routesAreCached()) {
-            require __DIR__.'/Http/routes.php';
-        }
-
         // Views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'flare');
         $this->publishes([
@@ -35,6 +30,10 @@ class CmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // Routes
+        if (!$this->app->routesAreCached()) {
+            require __DIR__.'/Http/routes.php';
+        }
     }
 
     /**
