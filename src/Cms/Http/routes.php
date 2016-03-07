@@ -11,5 +11,6 @@
 |
 */
 
-Route::any('{slug}/{two?}/{three?}/{four?}/{five?}', '\LaravelFlare\Cms\Http\Controllers\CmsController@route');
-Route::any('/', '\LaravelFlare\Cms\Http\Controllers\CmsController@homepage');
+Route::any('{slug}', function ($slug) {
+    return app('cms')->handleRoute($slug);
+})->where('slug', '[\.\/_\-\_A-Za-z0-9]+');

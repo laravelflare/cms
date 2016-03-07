@@ -12,12 +12,14 @@ class CmsServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        $router->middleware('checkslugexists', 'LaravelFlare\Cms\Http\Middleware\CheckSlugExists');
+        $this->app->singleton('cms', function ($app) {
+            return app()->make(\LaravelFlare\Cms\CmsManager::class);
+        });
 
         $this->publishes([
             __DIR__.'/Database/Migrations' => base_path('database/migrations'),
         ]);
-
+        
         // Views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'flare');
         $this->publishes([
@@ -31,9 +33,10 @@ class CmsServiceProvider extends ServiceProvider
     public function register()
     {
         // Routes
-        if (!$this->app->routesAreCached()) {
+       // if (!$this->app->routesAreCached()) {
             require __DIR__.'/Http/routes.php';
-        }
+      //  }
+      //  
     }
 
     /**
@@ -49,4 +52,5 @@ class CmsServiceProvider extends ServiceProvider
     protected function registerBladeOperators()
     {
     }
+
 }
