@@ -39,9 +39,9 @@
                         </div>
                     </div>
                     
-                    @include('flare::admin.pages.includes.page-list')
+                    @include('flare::admin.cms.includes.page-list')
                     
-                    @include('flare::admin.pages.includes.page-list-footer')
+                    @include('flare::admin.cms.includes.page-list-footer')
                 </div>
             </div>
         </div>

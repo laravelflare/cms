@@ -25,6 +25,11 @@ class CmsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/flare'),
         ]);
+        // Routes
+       // if (!$this->app->routesAreCached()) {
+            require __DIR__.'/Http/routes.php';
+      //  }
+      //  
     }
 
     /**
@@ -32,11 +37,6 @@ class CmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Routes
-       // if (!$this->app->routesAreCached()) {
-            require __DIR__.'/Http/routes.php';
-      //  }
-      //  
     }
 
     /**

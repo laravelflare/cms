@@ -14,11 +14,16 @@ class CreateCmsTreeTable extends Migration
     {
         Schema::create('flare_cms_tree', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('fullslug');
             $table->text('slug');
             $table->integer('parent_id');
             $table->morphs('page');
             $table->softDeletes();
             $table->timestamps();
+
+            $table->index('fullslug');
+            $table->index('slug');
+            $table->index('fullslug');
         });
     }
 
